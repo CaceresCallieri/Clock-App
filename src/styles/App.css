@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+#root main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#root main .quote-container {
+  max-width: 30%;
+  margin: 4rem 8rem;
+}
+#root main .quote-container .quote-and-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+#root main .quote-container .quote-and-button button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#root main .quote-container .quote-and-button button svg path {
+  transition: opacity 0.1s ease-in-out;
+}
+#root main .quote-container .quote-and-button .loading svg {
+  animation: spin 0.75s linear infinite forwards;
+}
+#root main .quote-container .author {
+  margin-top: 1rem;
+}
+#root main .clock-and-button {
+  margin: 4rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+}
+#root main .clock-and-button .clock-container {
+  place-self: end;
+}
+#root main .clock-and-button .clock-container .greeting-message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#root main .clock-and-button .clock-container .hour-and-timezone {
+  display: flex;
+  align-items: baseline;
+}
+#root main .clock-and-button .clock-container .hour-and-timezone h1 {
+  font-size: 9vw;
+  font-weight: 700;
+  line-height: 1.2em;
+  color: #fff;
+}
+#root main .clock-and-button button {
+  place-self: end;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 0.85rem 1rem;
+  padding-right: 4rem;
+  border-radius: 2px;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+#root main .clock-and-button button div {
+  position: absolute;
+  right: 0.7rem;
+  display: grid;
+  place-items: center;
+  background-color: #303030;
+  width: 2rem;
+  height: 2rem;
+  border-radius: inherit;
+  transition: background-color 0.3s ease-in-out;
+}
+#root main .clock-and-button button .opened {
+  transform: rotate(180deg);
+}
+#root main .more-info-container {
+  height: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20%;
+  padding: 3rem 8rem;
+  position: relative;
+}
+#root main .more-info-container::after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 15%;
+  width: 2px;
+  height: 70%;
+  background-color: rgba(100, 100, 100, 0.2);
+}
+#root main .more-info-container h5 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+#root main .more-info-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+#root main .more-info-container.day {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #303030;
+}
+#root main .more-info-container.night {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (width >= 800px) {
+  #root main .quote-container .quote-and-button button:hover {
+    transform: scale(1.05);
+  }
+  #root main .quote-container .quote-and-button button:hover svg path {
+    opacity: 1;
+  }
+  #root main .clock-and-button button:hover {
+    transform: scale(1.05);
+  }
+  #root main .clock-and-button button:hover div {
+    background-color: #999999;
+  }
+}
+@media (width <= 1000px) {
+  #root main .quote-container {
+    max-width: 100%;
+    margin: 3rem;
+  }
+  #root main .clock-and-button {
+    height: 60%;
+    padding-top: 4rem;
+    justify-content: end;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem;
+  }
+  #root main .clock-and-button .clock-container {
+    place-self: start;
+  }
+  #root main .clock-and-button .clock-container .hour-and-timezone h1 {
+    font-size: 15vw;
+  }
+  #root main .clock-and-button button {
+    place-self: start;
+  }
+  #root main .more-info-container {
+    padding: 3rem;
+    gap: 10%;
+  }
+  #root main .more-info-container::after {
+    display: none;
+  }
+}
+@media (width <= 500px) {
+  #root main .clock-and-button .clock-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #root main .clock-and-button .clock-container .hour-and-timezone {
+    display: flex;
+    flex-direction: column;
+  }
+  #root main .clock-and-button .clock-container .hour-and-timezone .timezone {
+    display: none;
+  }
+  #root main .clock-and-button .clock-container p {
+    font-size: 0.85rem;
+  }
+  #root main .clock-and-button .clock-container h2 {
+    font-size: 1rem;
+  }
+  #root main .more-info-container {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #root main .more-info-container div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  #root main .more-info-container div h5 {
+    font-size: 0.85rem;
+  }
+  #root main .more-info-container div h2 {
+    text-align: right;
+    font-size: 1.15rem;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}/*# sourceMappingURL=App.css.map */

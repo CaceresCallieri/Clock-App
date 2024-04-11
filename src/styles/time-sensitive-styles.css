@@ -1,0 +1,60 @@
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+body.day::before {
+  background-image: url("../assets/backgrounds/desktop/day/bg-desktop-day-1.gif");
+}
+body.day #root main .more-info-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #303030;
+}
+
+body.night::before {
+  background-image: url("../assets/backgrounds/desktop/night/bg-desktop-night-1.gif");
+}
+body.night #root main .more-info-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+body.morning::before {
+  background-image: url("../assets/backgrounds/desktop/morning/bg-desktop-morning-1.gif");
+}
+body.morning #root main .more-info-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #303030;
+}
+
+body.afternoon::before {
+  background-image: url("../assets/backgrounds/desktop/afternoon/bg-desktop-afternoon-1.gif");
+}
+body.afternoon #root main .more-info-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #303030;
+}
+
+@media (width <= 800px) {
+  body.day::before {
+    background-image: url("../assets/backgrounds/mobile/day/bg-mobile-day-1.gif");
+  }
+  body.night::before {
+    background-image: url("../assets/backgrounds/mobile/night/bg-mobile-night-1.gif");
+  }
+  body.morning::before {
+    background-image: url("../assets/backgrounds/mobile/morning/bg-mobile-morning-1.gif");
+  }
+  body.afternoon::before {
+    background-image: url("../assets/backgrounds/mobile/afternoon/bg-mobile-afternoon-1.gif");
+  }
+}/*# sourceMappingURL=time-sensitive-styles.css.map */
